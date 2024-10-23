@@ -1,0 +1,17 @@
+{
+    "name": "js-slot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "script.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:scss": "sass scss/styles.scss css/styles.css",
+        "watch:scss": "sass --watch scss/styles.scss css/styles.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "sass": "^1.80.3"
+    }
+}

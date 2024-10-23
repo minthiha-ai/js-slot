@@ -1,0 +1,115 @@
+$icon_width: 79px;
+$icon_height: 79px;
+$num_icons: 9;
+
+html,
+body {
+    height: 100%;
+}
+
+body{
+    background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+}
+
+.slots {
+    position: relative;
+    width: 6 * $icon_width;
+    height: 3 * $icon_height;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3 * $icon_width;
+    background: linear-gradient(45deg, grey 0%, lightgray 100%);
+    border-top: 1px solid rgba(white, 0.6);
+    border-right: 1px solid rgba(white, 0.6);
+    border-left: 1px solid rgba(black, 0.4);
+    border-bottom: 1px solid rgba(black, 0.4);
+    box-shadow: -2px 2px 3px rgba(black, 0.3);
+    border-radius: 3px;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 10px;
+        height: 2px;
+        background-color: rgba(black, 0.5);
+    }
+
+    &::before {
+        left: 0;
+        transform: translate(-200%, -50%);
+    }
+
+    &::after {
+        right: 0;
+        transform: translate(200%, -50%);
+    }
+
+    @keyframes win1 {
+        0% {
+            background: linear-gradient(45deg, orange 0%, yellow 100%);
+            box-shadow: 0 0 80px orange
+        }
+
+        100% {
+            background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+            box-shadow: -2px 2px 3px rgba(black, 0.3);
+        }
+    }
+
+    @keyframes win2 {
+        0% {
+            background: linear-gradient(45deg, lightblue 0%, lightgreen 100%);
+            box-shadow: 0 0 80px lightgreen
+        }
+
+        100% {
+            background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+            box-shadow: -2px 2px 3px rgba(black, 0.3);
+        }
+    }
+
+    &.win1 {
+        animation: win1 200ms steps(2, end) infinite;
+    }
+
+    &.win2 {
+        animation: win2 200ms steps(2, end) infinite;
+    }
+
+    .reel {
+        position: relative;
+        width: $icon_width;
+        height: 3 * $icon_height;
+        border: 1px solid rgba(black, 0.3);
+        border-radius: 3px;
+        overflow: hidden;
+        background-image: url(https://assets.codepen.io/439000/slotreel.webp);
+        background-position: 0 0;
+        background-repeat: repeat-y;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(black, 0.4) 0%, transparent 30%, transparent 70%, rgba(black, 0.4) 100%);
+            box-shadow: inset 0 0 6px 2px rgba(black, 0.3);
+        }
+
+    }
+}
