@@ -2,24 +2,53 @@ $icon_width: 79px;
 $icon_height: 79px;
 $num_icons: 9;
 
-html,
 body {
     height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, grey 0%, lightgrey 100%);
 }
 
-body{
-    background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+.main {
+    // background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+    height: auto;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: auto;
+.bet-container {
+    width: 50vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px ;
+}
+
+.betting-system{
+    width: 75%;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.form-btn {
+    width: 55%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 0.5rem;
 }
 
 .slots {
@@ -36,6 +65,7 @@ img {
     border-bottom: 1px solid rgba(black, 0.4);
     box-shadow: -2px 2px 3px rgba(black, 0.3);
     border-radius: 3px;
+    margin-top: 20px;
 
     &::before,
     &::after {
@@ -112,4 +142,131 @@ img {
         }
 
     }
+}
+
+.win-line {
+    border-top: 3px solid gold;
+}
+
+#play-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#play-btn:hover {
+    background-color: #218838;
+}
+
+#payline-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.payline-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.payline-btn {
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.payline-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.payline-btn.active {
+    background-color: #d4af37;
+    border-color: #b8860b;
+}
+
+#play-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, opacity 0.3s;
+
+    &:hover {
+        background-color: #218838;
+    }
+
+    &:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+.report{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    padding: 10px;
+}
+
+.game-history-container, .leaderboard-container {
+    width: 50vw;
+    padding: 10px;
+}
+
+// Terminal theme styling
+.terminal-theme {
+    background-color: black;
+    color: limegreen; // Green text
+    text-align: left;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    width: 80%;
+    border: 2px solid #444;
+    height: 275px;
+    max-height: 275px;
+}
+
+pre mark {
+    background-color: #00ff00;
+    /* Bright green to indicate change */
+    color: black;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.mark-highlight {
+    background-color: #00ff00;
+    /* Bright green highlight */
+    color: black;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 3px;
+    transition: background-color 0.5s ease;
+}
+
+.mark-highlight.remove-highlight {
+    background-color: transparent;
+    color: limegreen;
 }

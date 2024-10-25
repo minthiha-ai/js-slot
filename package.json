@@ -1,17 +1,22 @@
 {
     "name": "js-slot",
     "version": "1.0.0",
-    "description": "",
     "main": "script.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build:scss": "sass scss/styles.scss css/styles.css",
-        "watch:scss": "sass --watch scss/styles.scss css/styles.css"
+        "build:scss": "sass scss/styles.scss public/css/styles.css",
+        "watch:scss": "sass --watch scss/styles.scss public/css/styles.css"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "sass": "^1.80.3"
-    }
+    },
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "express": "^4.21.1",
+        "immutable": "^4.3.7"
+    },
+    "description": ""
 }

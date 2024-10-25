@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="bet-container">
+            <!-- User input section -->
+            <div class="betting-system">
+                <div class="form-group">
+                    <label for="name-input">Enter Your Name:</label>
+                    <input type="text" id="name-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password-input">Enter Password:</label>
+                    <input type="password" id="password-input" required>
+                </div>
+                <div class="form-btn">
+                    <button id="register-btn" style="display:none;">Register</button>
+                    <button id="login-btn">Login</button>
+                    <button id="logout-btn" style="display:none;">Logout</button>
+                </div>
+                <div class="form-group">
+                    <label for="money-input">Enter Money ($): </label>
+                    <input type="number" id="money-input" value="0" min="10" step="10">
+                </div>
+                <div class="form-btn">
+                    <button id="change-btn">Change</button>
+                </div>
+                <div class="form-group">
+                    <label for="points-display">Total Points: </label>
+                    <input type="number" id="points-display" value="0" disabled />
+                </div>
+            </div>
+
+            <!-- Slot machine area -->
+            <div class="slots">
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+            </div>
+
+            <!-- Payline selection -->
+            <div id="payline-selection">
+                <label>Select Paylines:</label>
+                <br />
+                <div class="payline-buttons">
+                    <button class="payline-btn active" data-lines="1">1 Line</button>
+                    <button class="payline-btn" data-lines="3">3 Line</button>
+                    <button class="payline-btn" data-lines="5">5 Lines</button>
+                    <button class="payline-btn" data-lines="7">7 Lines</button>
+                    <button class="payline-btn" data-lines="9">9 Lines</button>
+                    <button class="payline-btn" data-lines="11">11 Lines</button>
+                </div>
+            </div>
+
+            <!-- Bet Points -->
+            <div class="bet-points">
+                <label for="bet-input">Bet Points: </label>
+                <input type="number" id="bet-input" value="1" min="1" step="1">
+            </div>
+
+            <!-- Play Button -->
+            <button id="play-btn">Play</button>
+        </div>
+
+        <div className="report">
+            <div class="leaderboard-container">
+                <h2>Leaderboard</h2>
+                <pre id="leaderboard" class="terminal-theme">Loading leaderboard...</pre>
+            </div>
+            <!-- Game History Section -->
+            <div class="game-history-container">
+                <h2>Game History</h2>
+                <pre id="game-history" class="terminal-theme"></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script section for loading functionality -->
+    <script src="js/auth.js"></script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
